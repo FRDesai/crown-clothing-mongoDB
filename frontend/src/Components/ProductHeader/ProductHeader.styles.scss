@@ -1,0 +1,12 @@
+.title-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    cursor: pointer;
+    font-size: 40px;
+  }
+}
