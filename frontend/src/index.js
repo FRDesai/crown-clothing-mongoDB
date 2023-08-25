@@ -22,7 +22,7 @@ root.render(
               <Route index element={<Home />} />
               <Route path="shop" element={<Shop />} />
               <Route path="shop/:category" element={<CategoryPage />} />
-              <Route path="checkout" element={<CheckOut/>}/>
+              <Route path="checkout" element={<CheckOut />} />
               <Route path="signIn" element={<SignIn />} />
               <Route />
             </Route>

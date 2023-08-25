@@ -4,6 +4,7 @@ import "./CheckOut.styles.scss";
 import { CartContext } from "../../Context/cartContext";
 import CheckoutGrid from "../../Components/CheckoutGrid/CheckoutGrid";
 import CheckoutHeader from "../../Components/CheckoutHeader/CheckoutHeader";
+import CheckoutTotal from "../../Components/CheckoutTotal/CheckoutTotal";
 
 const CheckOut = () => {
   const cartItem = useContext(CartContext);
@@ -20,6 +21,7 @@ const CheckOut = () => {
         <div>
           <CheckoutHeader />
           <CheckoutGrid CheckoutItemsArray={CheckoutItemsArray} />
+          <CheckoutTotal />
         </div>
       ) : (
         <div className="empty-cart">

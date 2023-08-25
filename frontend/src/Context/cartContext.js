@@ -21,6 +21,15 @@ export const CartDataProvider = ({ children }) => {
     (acc, item) => acc + item.quantity,
     0
   );
+
+  const totalPrice = Object.values(cartItem).reduce(
+    (accumulator, currentItem) => {
+      const subtotal = currentItem.price * currentItem.quantity;
+      return accumulator + subtotal;
+    },
+    0
+  );
+
   const value = {
     CartVisible,
     setCartVisible,
@@ -28,6 +37,7 @@ export const CartDataProvider = ({ children }) => {
     setCartItem,
     addItem,
     totalQuantity,
+    totalPrice,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
