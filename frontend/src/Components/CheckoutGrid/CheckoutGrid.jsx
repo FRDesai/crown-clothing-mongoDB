@@ -6,7 +6,7 @@ import { ReactComponent as Decrease } from "../../Assets/Images/prev.svg";
 import { CartContext } from "../../Context/cartContext";
 
 const CheckoutGrid = ({ CheckoutItemsArray }) => {
-  const { addItem, decreaseItem } = useContext(CartContext);
+  const { addItem, decreaseItem, removeItem } = useContext(CartContext);
   return (
     <div className="checkout-item-container">
       {CheckoutItemsArray.map((item) => (
@@ -23,7 +23,7 @@ const CheckoutGrid = ({ CheckoutItemsArray }) => {
               <div>{item.quantity}</div>
               <Increase onClick={() => addItem(item)} className="next-icon" />
             </div>
-            <Remove />
+            <Remove onClick={() => removeItem(item)} className="remove-icon" />
           </div>
           <hr />
         </>

@@ -22,10 +22,16 @@ export const CartDataProvider = ({ children }) => {
       item.quantity -= 1;
       setCartItem({ ...cartItem, [item.id]: item });
     }
-    // else {
-    //   item.quantity = ;
-    //   setCartItem({ ...cartItem, [item.id]: item });
-    // }
+  };
+
+  const removeItem = (item) => {
+    // Use the filter function to create a new array without the item to be removed
+    const updatedCart = Object.values(cartItem).filter(
+      (cartItem) => cartItem.id !== item.id
+    );
+
+    // Update the cart with the new array
+    setCartItem(updatedCart);
   };
 
   const totalQuantity = Object.values(cartItem).reduce(
@@ -50,6 +56,7 @@ export const CartDataProvider = ({ children }) => {
     totalQuantity,
     totalPrice,
     decreaseItem,
+    removeItem,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
