@@ -1,0 +1,27 @@
+.checkout-item-container {
+  width: 60%;
+  margin: 0 auto;
+  .checkout-item-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+    }
+    .checkout-item-name {
+      width: 11.5%;
+    }
+    .quantity-container {
+      display: flex;
+      gap: 20px;
+      .previous-icon {
+        cursor: pointer;
+      }
+      .next-icon {
+        cursor: pointer;
+      }
+    }
+  }
+}

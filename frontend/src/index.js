@@ -9,6 +9,7 @@ import Home from "./Pages/Home/Home";
 import { DataProvider } from "./Context/dataContext";
 import { CartDataProvider } from "./Context/cartContext";
 import CategoryPage from "./Pages/CategoryPage/CategoryPage";
+import CheckOut from "./Pages/CheckOut/CheckOut";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
               <Route index element={<Home />} />
               <Route path="shop" element={<Shop />} />
               <Route path="shop/:category" element={<CategoryPage />} />
+              <Route path="checkout" element={<CheckOut/>}/>
               <Route path="signIn" element={<SignIn />} />
               <Route />
             </Route>

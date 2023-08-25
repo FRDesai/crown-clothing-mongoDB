@@ -4,11 +4,8 @@ import Button from "../Button/Button";
 import { CartContext } from "../../Context/cartContext";
 
 const ProductCard = ({ items }) => {
-  const { cartItem, setCartItem } = useContext(CartContext);
-  const addItem = (item) => {
-    setCartItem({ ...cartItem, [item.id]: item });
-  };
-  console.log(cartItem);
+  const { addItem } = useContext(CartContext);
+
   return (
     <div className="product-card-container">
       {items.map((item) => (

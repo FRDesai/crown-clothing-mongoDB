@@ -1,0 +1,40 @@
+.checkout-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 90px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  .checkout-header {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgrey;
+
+    .header-block-product {
+      text-transform: capitalize;
+      width: 35%;
+      text-align: center;
+    }
+    .header-block-description {
+      width: 17.5%;
+      text-align: center;
+    }
+    .header-block-price {
+      width: 17.5%;
+      text-align: center;
+    }
+    .header-block-quantity {
+      width: 17.5%;
+      text-align: center;
+    }
+    .header-block-remove {
+      width: 15.5%;
+      padding-left: 3%;
+      text-align: center;
+    }
+  }
+}

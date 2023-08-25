@@ -13,7 +13,6 @@ export const DataProvider = ({ children }) => {
         const response = await axios.get(
           "http://localhost:5050/api/categories"
         );
-        console.log("response", response.data);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

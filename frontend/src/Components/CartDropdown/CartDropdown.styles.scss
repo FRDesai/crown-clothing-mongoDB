@@ -1,6 +1,6 @@
 .cart-dropdown-container {
   border: 2px solid black;
-  height: 375px;
+  height: 330px;
   width: 250px;
   position: absolute;
   top: 80px;
@@ -8,10 +8,9 @@
   background-color: white;
 
   .cart-container {
-    height: 280px;
+    height: 250px;
     overflow-y: scroll;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 5px;
     &::-webkit-scrollbar {
       width: 6px;
     }
@@ -30,7 +29,7 @@
       text-align: center;
       justify-content: space-evenly;
       align-items: center;
-      overflow: hidden;
+
       .image {
         img {
           width: 50px;
@@ -41,6 +40,11 @@
       .name-price-container {
         width: 50%;
       }
+      .remove {
+        cursor: pointer;
+        margin-right: 10px;
+        margin-top: -15px;
+      }
     }
   }
 
@@ -50,7 +54,11 @@
     align-items: center;
     text-align: center;
     button {
+      margin-top: auto;
       margin-bottom: 30px;
+      background-color: black;
+      color: white;
+      cursor: pointer;
     }
   }
 }
