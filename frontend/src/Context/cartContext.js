@@ -17,6 +17,17 @@ export const CartDataProvider = ({ children }) => {
     }
   };
 
+  const decreaseItem = (item) => {
+    if (item.quantity > 0) {
+      item.quantity -= 1;
+      setCartItem({ ...cartItem, [item.id]: item });
+    }
+    // else {
+    //   item.quantity = ;
+    //   setCartItem({ ...cartItem, [item.id]: item });
+    // }
+  };
+
   const totalQuantity = Object.values(cartItem).reduce(
     (acc, item) => acc + item.quantity,
     0
@@ -38,6 +49,7 @@ export const CartDataProvider = ({ children }) => {
     addItem,
     totalQuantity,
     totalPrice,
+    decreaseItem,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
