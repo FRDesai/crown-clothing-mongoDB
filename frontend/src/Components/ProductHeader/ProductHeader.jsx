@@ -2,16 +2,20 @@ import React from "react";
 import "./ProductHeader.styles.scss";
 import { useNavigate } from "react-router-dom";
 
-const ProductHeader = ({ title }) => {
+const ProductHeader = ({ title, onClick }) => {
   const navigate = useNavigate();
+
   const handleRoute = (title) => {
     const dynamicroute = `${title}`;
     navigate(dynamicroute);
   };
 
   return (
-    <div className="title-header">
-      <h1 onClick={() => handleRoute(title)}>{title}</h1>
+    <div
+      onClick={onClick ? () => handleRoute(title) : null}
+      className="title-header"
+    >
+      <h1>{title}</h1>
     </div>
   );
 };

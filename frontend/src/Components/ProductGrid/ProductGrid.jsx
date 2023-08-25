@@ -8,7 +8,7 @@ const ProductGrid = ({ productCategory }) => {
   const four_items = items.filter((_, index) => index < 4);
   return (
     <div className="product-grid">
-      <ProductHeader title={title} />
+      <ProductHeader title={title} onClick={true} />
       <ProductCard items={four_items} />
     </div>
   );
