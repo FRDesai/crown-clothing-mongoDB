@@ -2,9 +2,7 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    const connect = await mongoose.connect(
-      "mongodb+srv://fatsdesai2018:sZ8E77h4ys3fWPpE@crown-clothing.0lzibjt.mongodb.net/crown-clothing?retryWrites=true&w=majority"
-    );
+    const connect = await mongoose.connect(process.env.ATLAS_URI);
     console.log(
       `Database connected: ${connect.connection.host} ${connect.connection.name}`
     );
