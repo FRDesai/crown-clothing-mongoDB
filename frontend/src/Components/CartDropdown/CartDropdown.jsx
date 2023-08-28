@@ -6,7 +6,7 @@ import { CartContext } from "../../Context/cartContext";
 import { ReactComponent as Remove } from "../../Assets/Images/remove.svg";
 
 const CartDropdown = () => {
-  const { cartItem, setCartVisible } = useContext(CartContext);
+  const { cartItem, setCartVisible, removeItem } = useContext(CartContext);
 
   const cartItemsArray = Object.values(cartItem);
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const CartDropdown = () => {
                 ${item.price} X {item.quantity}
               </div>
             </div>
-            <Remove className="remove" />
+            <Remove onClick={() => removeItem(item)} className="remove" />
           </div>
         ))}
       </div>
