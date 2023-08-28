@@ -19,7 +19,7 @@ const CheckOut = () => {
     <>
       {CheckoutItemsArray.length > 0 ? (
         <div>
-          <CheckoutHeader />
+          {/* <CheckoutHeader /> */}
           <CheckoutGrid CheckoutItemsArray={CheckoutItemsArray} />
           <CheckoutTotal />
         </div>
