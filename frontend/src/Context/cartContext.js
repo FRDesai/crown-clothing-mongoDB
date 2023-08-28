@@ -16,14 +16,6 @@ export const CartDataProvider = ({ children }) => {
       setCartItem({ ...cartItem, [item.id]: item });
     }
   };
-
-  const decreaseItem = (item) => {
-    if (item.quantity > 0) {
-      item.quantity -= 1;
-      setCartItem({ ...cartItem, [item.id]: item });
-    }
-  };
-
   const removeItem = (item) => {
     // Use the filter function to create a new array without the item to be removed
     const updatedCart = Object.values(cartItem).filter(
@@ -32,6 +24,15 @@ export const CartDataProvider = ({ children }) => {
 
     // Update the cart with the new array
     setCartItem(updatedCart);
+  };
+  
+  const decreaseItem = (item) => {
+    if (item.quantity > 0) {
+      item.quantity -= 1;
+      setCartItem({ ...cartItem, [item.id]: item });
+    } else if (item.quantity === 1) {
+      removeItem(item);
+    }
   };
 
   const totalQuantity = Object.values(cartItem).reduce(

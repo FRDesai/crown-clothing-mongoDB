@@ -11,7 +11,7 @@ export const DataProvider = ({ children }) => {
     async function fetchData() {
       try {
         const response = await axios.get(
-          "https://crown-clothing-kypn.onrender.com/api/categories" // "http://localhost:5050/api/categories"
+          "https://crown-clothing-kypn.onrender.com/api/categories" //"http://localhost:5050/api/categories"
         );
         setData(response.data);
       } catch (error) {
@@ -20,5 +20,7 @@ export const DataProvider = ({ children }) => {
     }
     fetchData();
   }, []);
-  return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
+
+  const value = data;
+  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 };
