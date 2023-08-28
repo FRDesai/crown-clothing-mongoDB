@@ -9,7 +9,7 @@
     flex-direction: column; /* Change to a column layout */
     align-items: center; /* Center horizontally */
     text-align: center;
-    border: 2px solid red;
+    // border: 2px solid red;
     // width: 25%;
     height: 100%;
     button {
@@ -44,7 +44,7 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .product-card-container{
+  .product-card-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
