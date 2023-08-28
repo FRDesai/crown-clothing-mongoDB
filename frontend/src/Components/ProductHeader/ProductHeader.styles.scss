@@ -1,11 +1,14 @@
 .title-header {
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
-
+  // border: 2px solid red;
   h1 {
+    // border: 2px solid red;
+    text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1em;
+    letter-spacing: 10px;
     cursor: pointer;
     font-size: 40px;
   }
