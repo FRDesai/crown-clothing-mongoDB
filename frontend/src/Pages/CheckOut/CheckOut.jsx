@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./CheckOut.styles.scss";
 import { CartContext } from "../../Context/cartContext";
 import CheckoutGrid from "../../Components/CheckoutGrid/CheckoutGrid";
-import CheckoutHeader from "../../Components/CheckoutHeader/CheckoutHeader";
 import CheckoutTotal from "../../Components/CheckoutTotal/CheckoutTotal";
 
 const CheckOut = () => {

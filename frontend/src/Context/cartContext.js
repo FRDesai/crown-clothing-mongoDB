@@ -17,15 +17,12 @@ export const CartDataProvider = ({ children }) => {
     }
   };
   const removeItem = (item) => {
-    // Use the filter function to create a new array without the item to be removed
     const updatedCart = Object.values(cartItem).filter(
       (cartItem) => cartItem.id !== item.id
     );
-
-    // Update the cart with the new array
     setCartItem(updatedCart);
   };
-  
+
   const decreaseItem = (item) => {
     if (item.quantity > 0) {
       item.quantity -= 1;
