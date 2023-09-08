@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { DataContext } from "../../Context/dataContext";
 import ProductGrid from "../../Components/ProductGrid/ProductGrid";
 const Shop = () => {
   const data = useContext(DataContext);
-  console.log("data in shop", data);
-  if (!data || data.length === 0) {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    if (data && data.length > 0) {
+      setIsLoading(false);
+    }
+  }, [data]);
+
+  if (isLoading) {
     return <div>Loading...</div>;
   } else
     return (
