@@ -11,6 +11,7 @@ import { CartDataProvider } from "./Context/cartContext";
 import CategoryPage from "./Pages/CategoryPage/CategoryPage";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import NoPage from "./Pages/NoPage/NoPage";
+import SignUp from "./Pages/SignUp/SignUp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,6 +27,7 @@ root.render(
               {/* <Route path="shop/*" element={<CategoryPage />} /> */}
               <Route path="checkout" element={<CheckOut />} />
               <Route path="signIn" element={<SignIn />} />
+              <Route path="signUp" element={<SignUp />} />
               <Route path="*" element={<NoPage />} />
 
               <Route />
