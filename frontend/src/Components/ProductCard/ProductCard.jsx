@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ProductCard = ({ items }) => {
-  const { addItem, } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const handleAddItem = (item) => {
     addItem(item);
@@ -18,8 +18,8 @@ const ProductCard = ({ items }) => {
   };
   return (
     <div className="product-card-container">
-      {items.map((item) => (
-        <div className="product-card">
+      {items.map((item, index) => (
+        <div key={index} className="product-card">
           <div className="image">
             <img src={item.imageUrl} alt={item.name} />
           </div>

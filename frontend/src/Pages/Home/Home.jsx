@@ -16,8 +16,12 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        {categories.map((each) => (
-          <div onClick={() => handleNavigation(each)} className="item">
+        {categories.map((each, index) => (
+          <div
+            key={index}
+            onClick={() => handleNavigation(each)}
+            className="item"
+          >
             <div className="item-name-container">
               {each.title.toLocaleUpperCase()}
               <br />

@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as Crownlogo } from "../../Assets/Images/crown.svg";
+import { useSelector } from "react-redux";
 import "./Navbar.styles.scss";
 import CartIcon from "../CartIcon/CartIcon";
 
 const Navbar = () => {
+  const login = useSelector((state) => state.user.login);
   return (
     <>
       <div className="nav">
@@ -22,10 +24,14 @@ const Navbar = () => {
           <Link className="link" to="/shop">
             SHOP
           </Link>
+           {/* ( */}
+            <Link className="link" to="/signIn">
+              SIGNIN
+            </Link>
+          {/* ) : (
+            <p>Hi, user</p>
+          )} */}
 
-          <Link className="link" to="/signIn">
-            SIGNIN
-          </Link>
           <CartIcon />
         </div>
       </div>
