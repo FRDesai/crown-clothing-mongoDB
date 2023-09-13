@@ -25,7 +25,7 @@ const CheckoutGrid = ({ CheckoutItemsArray }) => {
             </div>
             <Remove onClick={() => removeItem(item)} className="remove-icon" />
           </div>
-          <hr />
+          {/* <hr /> */}
         </>
       ))}
     </div>

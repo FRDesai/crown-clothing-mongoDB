@@ -1,14 +1,15 @@
 .checkout-item-container {
-  width: 60%;
-  margin: 0 auto;
-  // border: 2px solid red;
+  width: 80%;
+  margin: 0 20px;
   .checkout-item-row {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid black;
+    margin: 10px 0;
     img {
       width: 200px;
-      height: 250px;
+      height: 220px;
       object-fit: cover;
     }
     .checkout-item-name {

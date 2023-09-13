@@ -18,7 +18,6 @@ const registerUser = async (req, res) => {
   const db = await connectDB();
   let user = await db.collection("user");
   const { email, password, phone, name } = req.body;
-  console.log("name in controller", name);
   const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   const newUser = {
     email: email,
