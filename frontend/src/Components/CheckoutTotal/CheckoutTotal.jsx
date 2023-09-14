@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const CheckoutTotal = () => {
   const navigate = useNavigate();
   const { totalPrice, totalQuantity } = useContext(CartContext);
+  
 
   const replaceWithAddressComponent = () => {
     navigate("address");

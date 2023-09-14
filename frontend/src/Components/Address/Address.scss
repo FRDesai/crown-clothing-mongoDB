@@ -13,10 +13,15 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+
       input {
         width: 100%;
         height: 40px;
         border: 2px solid black;
+      }
+      .disable {
+        background-color: rgb(197, 196, 196);
+        color: black;
       }
     }
     .address-btn {

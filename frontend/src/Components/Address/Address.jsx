@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Address.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getAddressFromPincode } from "../../Slices/pincodeSlice";
 
 const Address = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(0);
   const stateName = useSelector((state) => state.pincode.stateName);
   const cityName = useSelector((state) => state.pincode.city);
 
@@ -14,8 +14,13 @@ const Address = () => {
     setValue(value);
   };
 
+  useEffect(() => {
+    if (value.length === 6) {
+      handleGetAddress();
+    }
+  },[value]);
+
   const handleGetAddress = () => {
-    // Dispatch the action to fetch the address based on the pincode
     dispatch(getAddressFromPincode(value));
   };
 
@@ -34,19 +39,20 @@ const Address = () => {
           <input
             type="text"
             placeholder="Pincode"
-            value={value}
+            // value={value}
             onChange={(e) => {
               handleChange(e.target.value);
             }}
+            max="6"
+            min="6"
           />
           <input
             type="text"
             placeholder="Address(House No, Building, Street, Area)"
-            onClick={handleGetAddress}
           />
           <input type="text" placeholder="Locality/Town" />
-          <input name="city" value={cityName} disabled />
-          <input name="state" value={stateName} disabled />
+          <input className="disable" name="city" value={cityName} disabled />
+          <input className="disable" name="state" value={stateName} disabled />
         </div>
       </div>
       <div className="address-inner-container">
