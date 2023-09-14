@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
 import "./CheckoutTotal.styles.scss";
 import { CartContext } from "../../Context/cartContext";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutTotal = () => {
+  const navigate = useNavigate();
   const { totalPrice, totalQuantity } = useContext(CartContext);
-  // const totalPrice = localStorage.getItem("totalPrice");
+
+  const replaceWithAddressComponent = () => {
+    navigate("address");
+  };
+
   return (
     <div className="checkout-total-container">
       <div className="checkout-total-card">
@@ -27,7 +33,9 @@ const CheckoutTotal = () => {
           <div> Total Amount: </div>
           <div> ${totalPrice + 20}</div>
         </div>
-        <button>Place order</button>
+        <button onClick={() => replaceWithAddressComponent()}>
+          Place order
+        </button>
       </div>
     </div>
   );

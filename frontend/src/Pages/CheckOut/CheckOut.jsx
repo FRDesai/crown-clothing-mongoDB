@@ -6,27 +6,25 @@ import CheckoutGrid from "../../Components/CheckoutGrid/CheckoutGrid";
 import CheckoutTotal from "../../Components/CheckoutTotal/CheckoutTotal";
 
 const CheckOut = () => {
-  const cartItem = useContext(CartContext);
-  const checkoutItems = cartItem.cartItem;
+  const { cartItem } = useContext(CartContext);
+  console.log(cartItem);
 
-  const CheckoutItemsArray = Object.values(checkoutItems);
   const navigate = useNavigate();
   const shop = () => {
     navigate("/shop");
   };
   return (
     <>
-      {CheckoutItemsArray.length > 0 ? (
+      {cartItem.length > 0 ? (
         <div className="checkout-container">
-          {/* <CheckoutHeader /> */}
-          <CheckoutGrid CheckoutItemsArray={CheckoutItemsArray} />
+          <CheckoutGrid CheckoutItemsArray={cartItem} />
           <CheckoutTotal />
         </div>
       ) : (
         <div className="empty-cart">
           <div>Your cart is empty</div>
           <div>
-            You can browse the shop by{" "}
+            You can browse the shop by
             <span
               className="link"
               onClick={() => {
@@ -34,7 +32,7 @@ const CheckOut = () => {
               }}
             >
               clicking here
-            </span>{" "}
+            </span>
           </div>
         </div>
       )}

@@ -13,6 +13,7 @@ const CartDropdown = () => {
 
   const CheckOut = () => {
     setCartVisible(false);
+    console.log("hello in cart drop down");
     navigate("/checkout");
   };
   return (

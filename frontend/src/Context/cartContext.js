@@ -5,6 +5,7 @@ export const CartContext = createContext();
 
 export const CartDataProvider = ({ children }) => {
   const [CartVisible, setCartVisible] = useState(false);
+
   const [cartItem, setCartItem] = useState(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     return storedCartItems;
@@ -42,7 +43,7 @@ export const CartDataProvider = ({ children }) => {
     );
     setCartItem(updatedCartItems);
   };
-  
+
   const decreaseItem = (item) => {
     const existingItem = cartItem.find((cartItem) => cartItem.id === item.id);
     if (existingItem && existingItem.quantity > 1) {
