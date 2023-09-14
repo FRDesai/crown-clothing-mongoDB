@@ -42,6 +42,7 @@ export const CartDataProvider = ({ children }) => {
     );
     setCartItem(updatedCartItems);
   };
+  
   const decreaseItem = (item) => {
     const existingItem = cartItem.find((cartItem) => cartItem.id === item.id);
     if (existingItem && existingItem.quantity > 1) {
