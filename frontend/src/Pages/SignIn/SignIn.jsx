@@ -22,6 +22,7 @@ const SignIn = () => {
     dispatch(login(inputs))
       .then((result) => {
         if (result.type === "user/login/fulfilled") {
+          console.log("data", result);
           toast("Login successfull!", {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 500,

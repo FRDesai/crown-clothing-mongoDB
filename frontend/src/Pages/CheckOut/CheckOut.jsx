@@ -13,12 +13,18 @@ const CheckOut = () => {
   const shop = () => {
     navigate("/shop");
   };
+  const replaceWithAddressComponent = () => {
+    navigate("address");
+  };
   return (
     <>
       {cartItem.length > 0 ? (
         <div className="checkout-container">
           <CheckoutGrid CheckoutItemsArray={cartItem} />
-          <CheckoutTotal />
+          <CheckoutTotal
+            btnName={"continue"}
+            clickfunction={() => replaceWithAddressComponent()}
+          />
         </div>
       ) : (
         <div className="empty-cart">

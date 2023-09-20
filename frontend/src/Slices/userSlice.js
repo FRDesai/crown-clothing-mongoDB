@@ -48,7 +48,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
 export const login = createAsyncThunk(
   "user/login",
   async ({ email, password }) => {
@@ -57,6 +56,7 @@ export const login = createAsyncThunk(
         email,
         password,
       });
+      console.log(response.data);
       return response.data;
     } catch (error) {
       throw error.response.data.message;

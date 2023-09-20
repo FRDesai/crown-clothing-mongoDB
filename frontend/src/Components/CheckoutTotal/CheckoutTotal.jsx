@@ -1,16 +1,9 @@
 import React, { useContext } from "react";
 import "./CheckoutTotal.styles.scss";
 import { CartContext } from "../../Context/cartContext";
-import { useNavigate } from "react-router-dom";
 
-const CheckoutTotal = () => {
-  const navigate = useNavigate();
+const CheckoutTotal = ({ btnName, clickfunction }) => {
   const { totalPrice, totalQuantity } = useContext(CartContext);
-  
-
-  const replaceWithAddressComponent = () => {
-    navigate("address");
-  };
 
   return (
     <div className="checkout-total-container">
@@ -34,9 +27,7 @@ const CheckoutTotal = () => {
           <div> Total Amount: </div>
           <div> ${totalPrice + 20}</div>
         </div>
-        <button onClick={() => replaceWithAddressComponent()}>
-          Place order
-        </button>
+        <button onClick={clickfunction}>{btnName}</button>
       </div>
     </div>
   );
