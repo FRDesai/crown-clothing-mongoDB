@@ -1,12 +1,7 @@
 import express from "express";
-import {
-  getAllProducts,
-  registerUser,
-  loginUser,
-  createOrder,
-
-  paymentVerification,
-} from "../controllers/controller.js";
+import { getAllProducts } from "../controllers/Product.js";
+import { registerUser, loginUser } from "../controllers/User.js";
+import { createOrder, paymentVerification } from "../controllers/Payment.js";
 
 const router = express.Router();
 

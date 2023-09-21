@@ -4,23 +4,34 @@ import Address from "../../Components/Address/Address";
 import "./AddressPage.styles.scss";
 import axios from "axios";
 import { CartContext } from "../../Context/cartContext";
+import { TransactionContext } from "../../Context/transactionContext";
+import { useNavigate } from "react-router-dom";
 
 const AddressPage = () => {
   const { totalPrice } = useContext(CartContext);
+  const { setTransactionId, setTransactionNumber } =
+    useContext(TransactionContext);
+  const navigate = useNavigate();
 
   const handlePaymentSuccess = async (payment) => {
     console.log("Payment in handle payment success", payment);
-    const response = await axios.post(
-      "http://localhost:8000/api/paymentVerification",
-      {
-        razorpay_order_id: payment.razorpay_order_id,
-        razorpay_payment_id: payment.razorpay_payment_id,
-        razorpay_signature: payment.razorpay_signature,
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/paymentVerification",
+        {
+          razorpay_order_id: payment.razorpay_order_id,
+          razorpay_payment_id: payment.razorpay_payment_id,
+          razorpay_signature: payment.razorpay_signature,
+        }
+      );
+      console.log("Response in handle payment", response);
+      if (response) {
+        setTransactionId(response.razorpay_payment_id);
+        setTransactionNumber(response.razorpay_order_id);
+        navigate("/paymentSuccess");
       }
-    );
-    console.log("Response in handle payment", response);
-    if (response) {
-      window.location.href = "/";
+    } catch (error) {
+      console.log(error);
     }
   };
   const makePayment = async (amount, currency) => {
@@ -64,6 +75,7 @@ const AddressPage = () => {
         btnName={"place order"}
         clickfunction={() => makePayment(totalPrice + 20, "INR")}
       />
+      {/* <button onClick={handleRandomClick}>Random</button> */}
     </div>
   );
 };
